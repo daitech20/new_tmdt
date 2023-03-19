@@ -1,0 +1,37 @@
+from django.urls import include, path
+from products.api.api_views import (
+    KeywordList,
+    KeywordUpdate,
+    KeywordCreate,
+    BrandList,
+    BrandDetail,
+    BrandCreate,
+    BrandUpdate,
+    CategoryList,
+    CategoryDetail,
+    CategoryCreate,
+    CategoryUpdate,
+    ProductCreate,
+    ProductList,
+    ProductDetail,
+    CommentCreate,
+)
+
+urlpatterns = [
+    path('keyword/list', KeywordList.as_view()),
+    path('keyword/create', KeywordCreate.as_view()),
+    path('keyword/update/<int:id>', KeywordUpdate.as_view()),
+    path('brand/list', BrandList.as_view()),
+    path('brand/create', BrandCreate.as_view()),
+    path('brand/detail/<int:id>', BrandDetail.as_view()),
+    path('brand/update/<int:id>', BrandUpdate.as_view()),
+    path('category/list', CategoryList.as_view()),
+    path('category/create', CategoryCreate.as_view()),
+    path('category/detail/<int:id>', CategoryDetail.as_view()),
+    path('category/update/<int:id>', CategoryUpdate.as_view()),
+    path('product/create', ProductCreate.as_view()),
+    path('product/list', ProductList.as_view()),
+    path('product/detail/<int:id>', ProductDetail.as_view()),
+    path('product/update/<int:id>', ProductDetail.as_view()),
+    path('comment/create', CommentCreate.as_view()),
+]
